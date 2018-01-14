@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-    <id>@project@</id>
-    <title>@project@@title@</title>
-    <version>@build.number@</version>
-    <authors>Esun Kim</authors>
-    <owners>Esun Kim</owners>
-    <description>Library that makes the unique alias of types in .NET.</description>
-    <projectUrl>https://github.com/SaladLab/TypeAlias</projectUrl>
+    <id>TypeAlias.Core</id>
+    <title>TypeAlias.Core</title>
+    <version>1.0</version>
+    <authors>Y Ten</authors>
+    <owners>Y Ten</owners>
+    <description>Library that makes the unique alias of types in .NET. For .net core 2.0</description>
+    <projectUrl>https://github.com/tteogi/TypeAlias</projectUrl>
     <licenseUrl>https://raw.githubusercontent.com/SaladLab/TypeAlias/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>@releaseNotes@</releaseNotes>
-    <copyright>Copyright © 2016 SaladLab</copyright>
+    <!-- <releaseNotes>@releaseNotes@</releaseNotes> -->
+    <copyright>Copyright © 2018 Y Ten</copyright>
     <tags>type alias</tags>
-    @dependencies@
-    @references@
+    <dependencies>
+    <group targetFramework=".NETFramework2.0">
+        <dependency id="NetLegacySupport.ConcurrentDictionary " version="1.1.0" />
+    </group>
+    <group targetFramework=".NETStandard2.0">
+        <dependency id="System.Reflection" version="4.3.0" />
+        <dependency id="System.Collections" version="4.3.0" />
+        <dependency id="System.Collections.Concurrent" version="4.3.0" />
+    </group>
+  </dependencies>
   </metadata>
+  <files>
+        <file src="..\TypeAlias.Net20\bin\Release\TypeAlias.dll" target="lib\net20" />
+        <file src="..\TypeAlias.Net35\bin\Release\TypeAlias.dll" target="lib\net35" />
+        <file src="..\TypeAlias.Net40\bin\Release\TypeAlias.dll" target="lib\net40" />
+        <file src="..\TypeAlias.Core20\bin\Release\netstandard2.0\TypeAlias.dll" target="lib\netstandard2.0" />
+    </files>
 </package>
